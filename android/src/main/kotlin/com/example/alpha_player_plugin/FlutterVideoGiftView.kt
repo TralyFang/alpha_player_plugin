@@ -129,20 +129,6 @@ class FlutterVideoGiftView(var context: Context, messenger: BinaryMessenger, id:
 //        }
         video_gift_view.attachView()
         video_gift_view.startVideoGift(_directoryPath, looping)
-//        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
-
-        /*// 创建一个协程作用域
-        runBlocking {
-            // 在协程中使用 delay 函数进行延迟
-            delay(100)
-
-            // 切换到主线程更新 UI
-            withContext(Dispatchers.Main) {
-                println("After delay")
-                // 在这里更新 UI
-                video_gift_view.attachView()
-            }
-        }*/
     }
 
     override fun dispose() {

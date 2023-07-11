@@ -5,10 +5,3 @@
 .pub/
 
 build/
-.idea/.gitignore
-.idea/alpha_player_plugin.iml
-.idea/libraries/Dart_SDK.xml
-.idea/libraries/Flutter_Plugins.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xm

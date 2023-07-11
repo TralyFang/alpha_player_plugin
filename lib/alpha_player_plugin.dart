@@ -11,8 +11,4 @@ class AlphaPlayerPlugin {
     final String version = await _channel.invokeMethod('getPlatformVersion');
     return version;
   }
-  static Future<String> pushFirstActivity(Map params) async {
-    String resultStr = await _channel.invokeMethod('jumpToActivity', params);
-    return resultStr;
-  }
 }
