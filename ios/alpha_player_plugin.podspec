@@ -5,9 +5,9 @@
 Pod::Spec.new do |s|
   s.name             = 'alpha_player_plugin'
   s.version          = '0.0.1'
-  s.summary          = 'A new Flutter project.'
+  s.summary          = 'flutter_alpha_player'
   s.description      = <<-DESC
-A new Flutter project.
+flutter_alpha_player
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }

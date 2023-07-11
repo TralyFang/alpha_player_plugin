@@ -1,6 +1,6 @@
 # alpha_player_plugin
 
-A new Flutter project.
+来自 https://github.com/bytedance/AlphaPlayer 的flutter版本实现
 
 ## Getting Started
 

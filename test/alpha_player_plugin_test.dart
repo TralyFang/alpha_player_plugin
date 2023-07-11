@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
+import 'package:flutter_alpha_player/alpha_player_plugin.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:alpha_player_plugin/alpha_player_plugin.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('alpha_player_plugin');
