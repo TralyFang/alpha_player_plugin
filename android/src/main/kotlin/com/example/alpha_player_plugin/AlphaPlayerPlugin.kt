@@ -41,12 +41,6 @@ class AlphaPlayerPlugin() : FlutterPlugin, MethodCallHandler, ActivityAware {
       this.registrar = registrar
       val channel = MethodChannel(registrar.messenger(), "alpha_player_plugin")
       channel.setMethodCallHandler(AlphaPlayerPlugin(registrar))
-//      registrar
-//              .platformViewRegistry()
-//              .registerViewFactory(
-//                      "alpha_player_plugin/myview",
-//                      MyViewFactory(registrar.messenger()))
-
       registrar
               .platformViewRegistry()
               .registerViewFactory(
@@ -77,16 +71,6 @@ class AlphaPlayerPlugin() : FlutterPlugin, MethodCallHandler, ActivityAware {
     channel.setMethodCallHandler(this)
     mContext = flutterPluginBinding.applicationContext
     val messenger: BinaryMessenger = flutterPluginBinding.binaryMessenger
-//    flutterPluginBinding
-//            .platformViewRegistry
-//            .registerViewFactory(
-//                    "alpha_player_plugin/myview",
-//                    MyViewFactory(messenger))
-      flutterPluginBinding
-          .platformViewRegistry
-          .registerViewFactory(
-              "alpha_player_plugin/alpha_player_view",
-              AlphaPlayerFactory(messenger))
     flutterPluginBinding
             .platformViewRegistry
             .registerViewFactory(
@@ -98,13 +82,6 @@ class AlphaPlayerPlugin() : FlutterPlugin, MethodCallHandler, ActivityAware {
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     if (call.method == "getPlatformVersion") {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
-    }else if (call.method == "jumpToActivity") {
-
-      // 参数
-      val params = call.argument<String>("key")
-
-
-      result.success(params)
     } else {
       result.notImplemented()
     }

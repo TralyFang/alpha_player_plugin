@@ -144,7 +144,7 @@ class AlphaVideoGiftViewState extends State<AlphaVideoGiftView> {
   Future<void> play({bool? repeat, String? filePath, String? assetsPath}) async {
 
     if (filePath == null) {
-      filePath = url;
+      filePath = url ?? widget.url;
     }
     if (repeat == null) {
       repeat = widget.repeat;
@@ -159,7 +159,7 @@ class AlphaVideoGiftViewState extends State<AlphaVideoGiftView> {
     if (assetsPath != null && Platform.isIOS) {
       params.addAll({'assetsPath': assetsPath});
     }
-    print('alpha video _methodChannel：$_methodChannel');
+    print('alpha video _methodChannel：$_methodChannel, $params');
     if (_methodChannel == null) {
       url = filePath;
       return;
