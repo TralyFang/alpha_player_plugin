@@ -9,3 +9,7 @@
 ## 0.0.3
 
 * Modify exceptions and examples
+
+## 0.0.4
+
+* support Android33

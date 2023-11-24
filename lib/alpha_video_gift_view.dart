@@ -10,7 +10,7 @@ import 'package:flutter/widgets.dart';
 class AlphaVideoGiftView extends StatefulWidget {
 
   /// 动画文件下载到本地的地址
-  final String? url;
+  String? url;
   final bool? repeat;
 
   final double height;
@@ -103,24 +103,22 @@ class AlphaVideoGiftViewState extends State<AlphaVideoGiftView> {
 
 
   MethodChannel? _methodChannel;
-  /// 播放的本地缓存地址
-  String? url;
 
   @override
   void initState() {
     super.initState();
-    url = widget.url;
+
   }
 
   void _onVideGiftCreated(int id) {
     var channelName = '${_viewType}_$id';
-    
+
     _methodChannel = MethodChannel(channelName);
 
     // Listen for natively triggered callbacks
     _methodChannel!.setMethodCallHandler((call) {
       switch(call.method) {
-        // The animation plays the completed callback
+      // The animation plays the completed callback
         case "didFinishPlayingCallback": {
           String? msg = call.arguments["msg"];
           print("Native invoke Flutter，params：$msg");
@@ -131,10 +129,10 @@ class AlphaVideoGiftViewState extends State<AlphaVideoGiftView> {
           return Future.value("success");
         }
       }
-      return Future.value(null);
+      return Future.value(null);;
     });
 
-    if (url != null) {
+    if (widget.url != null) {
       play();
     }
 
@@ -144,7 +142,7 @@ class AlphaVideoGiftViewState extends State<AlphaVideoGiftView> {
   Future<void> play({bool? repeat, String? filePath, String? assetsPath}) async {
 
     if (filePath == null) {
-      filePath = url ?? widget.url;
+      filePath = widget.url;
     }
     if (repeat == null) {
       repeat = widget.repeat;
@@ -159,9 +157,9 @@ class AlphaVideoGiftViewState extends State<AlphaVideoGiftView> {
     if (assetsPath != null && Platform.isIOS) {
       params.addAll({'assetsPath': assetsPath});
     }
-    print('alpha video _methodChannel：$_methodChannel, $params');
+    print('alpha video _methodChannel：$_methodChannel');
     if (_methodChannel == null) {
-      url = filePath;
+      widget.url = filePath;
       return;
     }
     _isPlaying = true;

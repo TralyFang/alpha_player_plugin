@@ -1,6 +1,6 @@
 name: flutter_alpha_player
 description: The plugin is a flutter version of the flutter implementation bytedance from AlphaPlayer
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/TralyFang/alpha_player_plugin
 repository: https://github.com/TralyFang/alpha_player_plugin.git
 
